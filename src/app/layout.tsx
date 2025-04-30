@@ -35,8 +35,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <ModeToggle />
+          <div className={'h-full grid grid-rows-[1fr_50px]'}>
+            {children}
+            <footer className={'flex justify-center'}>
+              <ModeToggle />
+            </footer>
+          </div>
         </ThemeProvider>
       </body>
     </html>
