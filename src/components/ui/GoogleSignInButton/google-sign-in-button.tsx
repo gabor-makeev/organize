@@ -1,12 +1,23 @@
 'use client'
 
 import { useTheme } from 'next-themes'
+import {useEffect, useState} from 'react'
 import darkStyles from './google-sign-in-button-dark.module.css'
 import lightStyles from './google-sign-in-button-light.module.css'
 
 
 export function GoogleSignInButton() {
+	const [mounted, setMounted] = useState(false)
 	const { theme } = useTheme()
+
+	useEffect(() => {
+		setMounted(true)
+	}, [])
+
+	if (!mounted) {
+		return null
+	}
+
 	const styles = theme === 'light' ? lightStyles : darkStyles
 
 	return (
