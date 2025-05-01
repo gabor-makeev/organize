@@ -1,4 +1,5 @@
-import { GoogleSignInButton } from "@/components/ui/GoogleSignInButton/google-sign-in-button";
+import { GoogleSignInButton } from "@/components/ui/GoogleSignInButton/google-sign-in-button"
+import { GitHubSignInButton } from "@/components/ui/GitHubSignInButton/github-sign-in-button"
 
 export default function Home() {
   return (
@@ -6,9 +7,7 @@ export default function Home() {
       <h1><a href="#" className={'text-2xl underline hover:no-underline'}>Organize</a></h1>
       <div className={'flex flex-col gap-4 sm:flex-row'}>
         <GoogleSignInButton />
-        <form action="#">
-          <button className={'cursor-pointer'}>Sign in with GitHub</button>
-        </form>
+        <GitHubSignInButton />
       </div>
     </div>
   );
