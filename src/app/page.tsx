@@ -11,7 +11,7 @@ export default function Home() {
         <div className="mt-4 text-center">
           Or
         </div>
-        <div className={'flex flex-col gap-4 sm:flex-row mt-4'}>
+        <div className={'flex flex-col items-center gap-4 sm:flex-row mt-4'}>
           <GoogleSignInButton />
           <GitHubSignInButton />
         </div>

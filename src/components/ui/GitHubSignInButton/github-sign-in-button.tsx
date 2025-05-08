@@ -25,7 +25,7 @@ export function GitHubSignInButton() {
 		<button
 			onClick={() => router.push('/dashboard')}
 			className={clsx(
-				'flex justify-center items-center gap-3 w-auto max-w-96 h-10 cursor-pointer border rounded-[4px] text-sm font-roboto tracking-[0.25px] px-3 relative group',
+				'flex items-center gap-3 max-w-[398px] h-10 cursor-pointer border rounded-[4px] text-sm font-roboto tracking-[0.25px] px-3 relative group',
 				theme === 'dark' && 'border-[#8e918f] bg-[#131314]',
 				theme === 'light' && 'duration-[218ms] border-[#747775] bg-white hover:shadow-[0_1px_2px_0_rgba(60,64,67,.30),0_1px_3px_1px_rgba(60,64,67,.15)]'
 			)}
@@ -37,7 +37,8 @@ export function GitHubSignInButton() {
 					theme === 'light' && 'hover:bg-[#303030] group-focus:bg-[#303030]'
 				)}
 			></div>
-			<GitHubIcon variant={githubIconVariant} />Sign in with GitHub
+			<GitHubIcon variant={githubIconVariant} />
+			<span className={"grow"}>Sign in with GitHub</span>
 		</button>
 	)
 }
