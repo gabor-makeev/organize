@@ -2,6 +2,7 @@
 
 import { useTheme } from 'next-themes'
 import {useEffect, useState} from 'react'
+import { useRouter} from "next/navigation"
 import darkStyles from './google-sign-in-button-dark.module.css'
 import lightStyles from './google-sign-in-button-light.module.css'
 
@@ -9,6 +10,7 @@ import lightStyles from './google-sign-in-button-light.module.css'
 export function GoogleSignInButton() {
 	const [mounted, setMounted] = useState(false)
 	const { theme } = useTheme()
+	const router = useRouter()
 
 	useEffect(() => {
 		setMounted(true)
@@ -21,7 +23,7 @@ export function GoogleSignInButton() {
 	const styles = theme === 'light' ? lightStyles : darkStyles
 
 	return (
-		<button className={styles['gsi-material-button']}>
+		<button onClick={() => router.push('/dashboard')} className={styles['gsi-material-button']}>
 			<div className={styles['gsi-material-button-state']}></div>
 			<div className={styles['gsi-material-button-content-wrapper']}>
 				<div className={styles['gsi-material-button-icon']}>

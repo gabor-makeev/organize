@@ -1,13 +1,15 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useTheme } from "next-themes"
-import { clsx } from "clsx"
-import { GitHubIcon } from "./github-icon"
+import { useTheme } from 'next-themes'
+import { useRouter } from 'next/navigation'
+import { clsx } from 'clsx'
+import { GitHubIcon } from './github-icon'
 
 export function GitHubSignInButton() {
 	const [mounted, setMounted] = useState(false)
 	const { theme } = useTheme()
+	const router = useRouter()
 
 	useEffect(() => {
 		setMounted(true)
@@ -21,6 +23,7 @@ export function GitHubSignInButton() {
 
 	return (
 		<button
+			onClick={() => router.push('/dashboard')}
 			className={clsx(
 				'flex justify-center items-center gap-3 w-auto max-w-96 h-10 cursor-pointer border rounded-[4px] text-sm font-roboto tracking-[0.25px] px-3 relative group',
 				theme === 'dark' && 'border-[#8e918f] bg-[#131314]',
