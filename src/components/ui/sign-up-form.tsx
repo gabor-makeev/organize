@@ -20,7 +20,7 @@ const formSchema = z.object({
 	password: z.string().min(1, "This field is required"),
 })
 
-export function SignInForm() {
+export function SignUpForm() {
 	const router = useRouter()
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -32,7 +32,7 @@ export function SignInForm() {
 
 	const onSubmit = (values: z.infer<typeof formSchema>) => {
 		// login logic will take place here
-		console.log("values submitted for sign in:", values)
+		console.log("values submitted for registration:", values)
 
 		router.push("/dashboard")
 	}
@@ -66,7 +66,7 @@ export function SignInForm() {
 						</FormItem>
 					)}
 				/>
-				<Button type={"submit"} variant={"outline"} className={"self-center"}>Log in</Button>
+				<Button type={"submit"} variant={"outline"} className={"self-center"}>Sign up</Button>
 			</form>
 		</Form>
 	)
